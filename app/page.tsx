@@ -53,7 +53,25 @@ export default async function Index() {
   return (
     <div className="max-w-[1280px] mx-auto px-4 md:px-7 lg:px-11">
       <h1 className="text-5xl mt-16">Show Us Your Waves</h1>
-      <div className="grid gap-4 grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-3">
+      <p className="text-xl mt-2">
+        Public archive of{" "}
+        <a
+          className="text-red-700 transition-colors duration-200 hover:text-red-400"
+          href="https://t.me/showusyourwaves"
+          target="_blank"
+        >
+          @showusyourwaves
+        </a>{" "}
+        channel by{" "}
+        <a
+          className="text-red-700 transition-colors duration-200 hover:text-red-400"
+          href="https://t.me/kateisdead"
+          target="_blank"
+        >
+          @kateisdead
+        </a>
+      </p>
+      <div className="grid gap-4 grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {messagesWithAlbums.map(
           ({
             id,
@@ -83,13 +101,14 @@ export default async function Index() {
               >
                 {imageLink ? (
                   <Image
+                    className="w-full aspect-square"
                     src={imageLink}
                     width={300}
                     height={300}
                     alt={albumName}
                   />
                 ) : (
-                  <div className="bg-red-300 w-[300px] h-[300px]" />
+                  <div className="bg-red-300 w-full aspect-square" />
                 )}
                 <div className="flex flex-col mt-4">
                   <h2 className="text-xl font-bold">{artistName}</h2>
@@ -101,7 +120,7 @@ export default async function Index() {
                   {spotifyUrl && (
                     <li>
                       <a
-                        className="transition-colors duration-200 hover:text-red-600"
+                        className="text-red-800 transition-colors duration-200 hover:text-red-600"
                         href={spotifyUrl}
                         target="_blank"
                       >
@@ -112,7 +131,7 @@ export default async function Index() {
                   {appleMusicUrl && (
                     <li>
                       <a
-                        className="transition-colors duration-200 hover:text-red-600"
+                        className="text-red-800 transition-colors duration-200 hover:text-red-600"
                         href={appleMusicUrl}
                         target="_blank"
                       >
@@ -123,7 +142,7 @@ export default async function Index() {
                   {yandexMusicUrl && (
                     <li>
                       <a
-                        className="transition-colors duration-200 hover:text-red-600"
+                        className="text-red-800 transition-colors duration-200 hover:text-red-600"
                         href={yandexMusicUrl}
                         target="_blank"
                       >
@@ -133,7 +152,7 @@ export default async function Index() {
                   )}
                 </ul>
                 <a
-                  className="mt-3 transition-colors duration-200 hover:text-red-400"
+                  className="mt-3 text-red-700 transition-colors duration-200 hover:text-red-400"
                   href={telegramPostLink}
                 >
                   View post →
