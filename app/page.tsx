@@ -91,11 +91,13 @@ export default async function Index() {
                 ) : (
                   <div className="bg-red-300 w-[300px] h-[300px]" />
                 )}
-                <h2>{artistName}</h2>
-                <h3> {albumName}</h3>
-                <span> {year}</span>
+                <div className="flex flex-col mt-4">
+                  <h2 className="text-xl font-bold">{artistName}</h2>
+                  <h3 className="text-lg font-medium"> {albumName}</h3>
+                  <span className="mt-1"> {year}</span>
+                </div>
 
-                <ul className="flex flex-col md:flex-row gap-y-1 md:gap-x-3 mt-2">
+                <ul className="flex flex-col md:flex-row gap-y-1 md:gap-x-3 mt-3">
                   {spotifyUrl && (
                     <li>
                       <a
@@ -131,7 +133,7 @@ export default async function Index() {
                   )}
                 </ul>
                 <a
-                  className="mt-3 transition-colors duration-200 hover:text-green-600"
+                  className="mt-3 transition-colors duration-200 hover:text-red-400"
                   href={telegramPostLink}
                 >
                   View post →
